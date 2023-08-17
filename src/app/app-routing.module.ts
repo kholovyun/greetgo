@@ -1,19 +1,26 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    redirectTo: 'auth',
+    pathMatch: 'full',
   },
   {
     path: 'contact-details/:contactId',
-    loadChildren: () => import('./contact-details/contact-details.module').then( m => m.ContactDetailsPageModule)
+    loadChildren: () => import('./contact-details/contact-details.module').then( m => m.ContactDetailsPageModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then( m => m.AuthPageModule)
   },
 ];
 
