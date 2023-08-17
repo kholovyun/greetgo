@@ -1,5 +1,5 @@
 {
-  "name": "contactsApp",
+  "name": "greet",
   "integrations": {
     "capacitor": {}
   },

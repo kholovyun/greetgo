@@ -3,7 +3,7 @@ import { BarcodeScanner } from '@capacitor-community/barcode-scanner';
 import { Contacts } from '@capacitor-community/contacts';
 import { Observable, from , map ,of} from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import  IContact  from 'src/interfaces/IContact';
+import { IContact } from 'src/interfaces/IContact';
 import IPermission from 'src/interfaces/IPermission';
 
 
