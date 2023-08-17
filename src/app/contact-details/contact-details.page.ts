@@ -19,7 +19,7 @@ export class ContactDetailsPage implements OnInit {
 
   async getContactInfo(contactId: string) {
     try {
-      const contact = await Contacts.getContact({contactId: contactId, projection:{name:true, phones: true, emails: true, organization: true}});
+      const contact = await Contacts.getContact({contactId: contactId, projection:{name:true, phones: true, emails: true, organization: true, birthday: true, postalAddresses: true}});
       this.contactInfo = {
         name: contact.contact.name?.given,
         phones: contact.contact.phones,
